@@ -2,7 +2,15 @@ import React from "react";
 
 const BookRow = props => {
   const book = props.book;
-  const authorName = props.authorName;
+  let authorName = "";
+  for (var i = 0; i < book.authors.length; i++) {
+    if (i !== book.authors.length - 1) {
+      authorName += book.authors[i].name + " ,";
+    } else {
+      authorName += book.authors[i].name;
+    }
+  }
+
   return (
     <tr>
       <td>{book.title}</td>
